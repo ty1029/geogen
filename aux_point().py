@@ -233,7 +233,11 @@ def add_auxiliary_point(c_str_ori: str, max_sample_cycles: int = 1000):
             
             
 def process_caption(caption_str_ori: str, save_to: str):
-    _, c_str_new, ads = add_auxiliary_point(caption_str_ori) # type: ignore
+    try:
+        _, c_str_new, ads = add_auxiliary_point(caption_str_ori) # type: ignore
+    except Exception as e:
+        print(f'Error: Something went wrong when adding aux point. {e}')
+        return
 
     write_data = {
         "ori_caption": caption_str_ori,
