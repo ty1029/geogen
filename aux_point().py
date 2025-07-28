@@ -251,6 +251,14 @@ def process_caption(caption_str_ori: str, save_to: str):
 
 
 if __name__ == '__main__':
-    caption_str_ori = 'a b c d = trapezoid a b c d; c a b = r_triangle c a b; d a b =r_triangle d a b ? rconst a c b d 1'
-    save_to = './outputs/aux_point().json'
-    process_caption(caption_str_ori, save_to)
+    # caption_str_ori = 'a b c d = trapezoid a b c d; c a b = r_triangle c a b; d a b =r_triangle d a b ? rconst a c b d 1'
+    # save_to = './outputs/aux_point().json'
+    # process_caption(caption_str_ori, save_to)
+    from new_base_scenes import base_scenes
+
+    save_path = './outputs/new_base_scenes'
+
+    for idx, elem in enumerate(base_scenes):
+        caption_str = elem['base_scene']
+        save_to = os.path.join(save_path, f'{idx}.json')
+        process_caption(caption_str, save_to)
