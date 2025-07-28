@@ -251,6 +251,6 @@ def process_caption(caption_str_ori: str, save_to: str):
 
 
 if __name__ == '__main__':
-    caption_str_ori = 'a b c = triangle a b c; d = angle_bisector d b a c, on_line d b c; e = foot b a d; f = on_pline0 f e a c, on_line f a b'
+    caption_str_ori = 'a b c d = trapezoid a b c d; c a b = r_triangle c a b; d a b =r_triangle d a b ? rconst a c b d 1'
     save_to = './outputs/aux_point().json'
     process_caption(caption_str_ori, save_to)
